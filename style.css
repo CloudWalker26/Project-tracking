@@ -1,0 +1,340 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  position: relative;
+}
+
+hr {
+  display: none;
+}
+header {
+  width: 90%;
+  height: 15vh;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  left: 5%;
+  z-index: 2;
+}
+header .logo {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  margin-left: auto;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  justify-content: space-between;
+  width: 20rem;
+}
+header nav ul li a {
+  color: hsl(230, 29%, 20%);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+header .hamburger {
+  /* display: absolute; */
+  display: none;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+}
+
+header .hamburger span {
+  background-color: hsl(233, 26%, 24%);
+  width: 35px;
+  height: 5px;
+  display: block;
+  margin: 6px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+header .hamburger.active span:first-child {
+  transform: rotate(45deg) translate3d(8px, 12px, 0);
+}
+header .hamburger.active span:nth-child(2) {
+  transform: scale(0);
+}
+header .hamburger.active span:last-child {
+  transform: rotate(-45deg) translate3d(4px, -8px, 0);
+}
+
+li {
+  color: hsl(230, 29%, 20%);
+  position: relative;
+  overflow: hidden;
+}
+
+li::after {
+  background-color: hsl(230, 29%, 20%);
+  content: "";
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+li:hover::after {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li .login::after {
+  background-color: hsl(230, 11%, 40%);
+  content: "";
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+li .login:hover::after {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  padding-left: 5%;
+}
+
+.text {
+  padding-left: 20px;
+  padding-top: 15.6rem;
+}
+
+.text h5 span {
+  background: hsl(230, 29%, 20%);
+  color: white;
+  padding: 3px 4px;
+  border-radius: 10px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.text h5 {
+  color: hsl(231, 7%, 65%);
+  font-family: "Barlow", sans-serif;
+  text-transform: uppercase;
+}
+
+.text h1 {
+  font-size: 5.6rem;
+  color: hsl(230, 29%, 20%);
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.text p {
+  color: hsl(230, 11%, 40%);
+  font-family: "Barlow", sans-serif;
+}
+
+.login {
+  color: hsl(230, 11%, 40%);
+  position: relative;
+  overflow: hidden;
+}
+
+.end {
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.end button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  color: white;
+  background-color: hsl(0, 100%, 68%);
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 525;
+}
+
+.end button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.end span {
+  color: hsl(231, 7%, 65%);
+  font-weight: lighter;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.right {
+  width: 50%;
+  background-color: hsl(207, 33%, 95%);
+  width: 50%;
+  height: 25rem;
+  border-bottom-left-radius: 75px;
+}
+
+.images img {
+  z-index: 2;
+  position: absolute;
+  top: 11rem;
+}
+
+@media (max-width: 1000px) {
+  hr {
+    display: block;
+    width: 90%;
+    border: none;
+    height: 1px;
+    background-color: hsl(207, 33%, 95%);
+  }
+  header {
+    width: 90%;
+    padding: 30px 0;
+    height: 8vh;
+    position: absolute;
+    right: 5%;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header .hamburger {
+    display: block;
+    margin-right: 20px;
+  }
+
+  header .menu.active {
+    /* position: fixed; */
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 80px auto;
+    height: 200px;
+    border-radius: 3px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  header .menu.active ul {
+    flex-direction: column;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+  }
+
+  header nav ul li a {
+    margin-left: 0;
+  }
+
+  header .menu.active ul li {
+    outline: none;
+  }
+
+  header .menu.active ul li a {
+    /* text-align: center;
+    align-items: center;
+    justify-content: center; */
+    color: hsl(233, 26%, 24%);
+    padding: 8px;
+    display: block;
+    position: relative;
+  }
+
+  header .menu.active ul li .login {
+    color: hsl(231, 7%, 65%);
+    /* color: red; */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .right {
+    margin-left: auto;
+    width: 50%;
+    height: 60%;
+  }
+  .images img {
+    width: 100%;
+    height: auto;
+    left: 10%;
+    z-index: 0;
+  }
+
+  .left {
+    height: 50%;
+    width: 100%;
+  }
+
+  .text {
+    padding-left: 20px;
+    padding-top: 10%;
+  }
+
+  .text h5 span,
+  .text h5 {
+    font-size: 1rem;
+  }
+
+  .text h5 span {
+    margin-right: 10px;
+  }
+
+  .text h1 {
+    font-size: 2.5rem;
+  }
+
+  .text p {
+    font-size: 1.3rem;
+  }
+
+  .end {
+    margin-top: 10px;
+  }
+  li:hover::after {
+    display: none;
+  }
+
+  .login:hover::after {
+    display: none;
+  }
+}
